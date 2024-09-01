@@ -1,30 +1,29 @@
-# iom2411
+# IOM2411
 
-A Flutter project for managing class schedules and resources.
+A Flutter project for managing class schedules and resources. This app helps students efficiently organize their class schedules and access essential resources such as Zoom links and Telegram groups.
 
 ## Overview
 
-This project is designed to help students easily manage their class schedules and access resources like Zoom links and Telegram groups. The app provides a clear and organized view of your class routines, with direct access to the necessary communication tools.
+The app provides a clear and organized view of class routines, along with direct access to communication tools. It fetches data from various JSON APIs to display schedules, manage class groups, and access lecture notes and recordings.
 
 ## Getting Started
 
-This project is the starting point for a Flutter application focused on education management. Below are some resources to help you if this is your first Flutter project:
+To start with this project, you can follow these resources:
 
 - [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
 - [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For more comprehensive guidance, refer to the [Flutter documentation](https://docs.flutter.dev/), which offers tutorials, samples, and a complete API reference.
+- [Flutter Documentation](https://docs.flutter.dev/): Comprehensive guidance, tutorials, and API references.
 
 ## Data Sources
 
 ### Homepage JSON
 
-The app uses a JSON API to fetch class schedules and other relevant data. Here are the JSON links used in the project:
+The app uses the following JSON APIs to fetch class schedules and other relevant data:
 
 - [Schedule Data (Link 1)](https://json.link/Th2iPxT1QO)
 - [Schedule Data (Link 2)](https://json.link/oJAzmxf0Pv.json)
 
-The structure of the JSON data is as follows:
+**Sample JSON Structure:**
 
 ```json
 {
@@ -43,12 +42,12 @@ The structure of the JSON data is as follows:
 
 ### Moshq JSON
 
-For managing group-based classes and links, the following JSON APIs are used:
+For managing group-based classes and links:
 
 - [Moshq Data (Link 1)](https://json.link/bSuB3vyOnv)
 - [Moshq Data (Link 2)](https://json.link/0ApID97SUn.json)
 
-The JSON structure looks like this:
+**Sample JSON Structure:**
 
 ```json
 [
@@ -58,30 +57,68 @@ The JSON structure looks like this:
     "telegram": "https://t.me/+d_S1pVWa64dlYzk1",
     "classLink": "https://skyzh.github.io/zoom-url-generator/?jump=true&confno=97425007009&pwd=&uname=Nobody%20-%2051800000000"
   },
+  ...
+]
+```
+
+### Lecture Notes JSON
+
+**Sample JSON Structure:**
+
+```json
+[
   {
-    "group": "02",
-    "time": "Saturday: 5:15 AM to 8:00 AM & Tuesday: 5:15 AM to 8:00 AM",
-    "telegram": "https://t.me/+QqkthWa7co9lMDM1",
-    "classLink": "https://skyzh.github.io/zoom-url-generator/?jump=true&confno=96935666518&pwd=&uname="
+    "subject": "Mathematics",
+    "notes": [
+      {
+        "name": "Lecture 01: Introduction to Algebra",
+        "url": "https://example.com/lecture01.pdf"
+      },
+      ...
+    ]
   },
+  ...
+]
+```
+
+### Previous Class Records JSON
+
+**Sample JSON Structure:**
+
+```json
+[
   {
-    "group": "03",
-    "time": "Saturday: 7:30 PM to 8:30 PM & Tuesday: 7:30 PM to 8:30 PM",
-    "telegram": "https://t.me/+E_NmCQYJ4cphMDk1",
-    "classLink": "https://skyzh.github.io/zoom-url-generator/?jump=true&confno=96935666518&pwd=&uname="
+    "subject": "Mathematics",
+    "records": [
+      {
+        "title": "Class 01: Introduction to Algebra",
+        "url": "https://example.com/class01.mp4"
+      },
+      ...
+    ]
   },
+  ...
+]
+```
+
+### Previous Semester JSON
+
+**Sample JSON Structure:**
+
+```json
+[
   {
-    "group": "04",
-    "time": "Monday: 7:30 PM to 8:30 PM & Wednesday: 5:15 AM to 8:00 AM",
-    "telegram": "https://t.me/+ZWZIP0e8zlg2Mzc1",
-    "classLink": "https://skyzh.github.io/zoom-url-generator/?jump=true&confno=96935666518&pwd=&uname="
+    "course": "Mathematics",
+    "classes": [
+      "https://example.com/class01.mp4",
+      ...
+    ],
+    "notes": [
+      "https://example.com/note01.pdf",
+      ...
+    ]
   },
-  {
-    "group": "04",
-    "time": "Saturday: 9:15 PM to 10:15 PM & Thursday: 5:15 AM to 8:00 AM",
-    "telegram": "https://t.me/+GY2mqtFKA1ZiZjk9",
-    "classLink": "https://skyzh.github.io/zoom-url-generator/?jump=true&confno=93199683723&pwd=&uname="
-  }
+  ...
 ]
 ```
 
@@ -91,3 +128,7 @@ The JSON structure looks like this:
 2. **Run the App**: Use `flutter run` to launch the app on your device or emulator.
 3. **View Schedules**: The app fetches and displays class schedules and other information from the provided JSON APIs.
 4. **Join Classes**: Directly join classes via Zoom links and stay updated through Telegram groups.
+
+## Contributing
+
+Contributions are welcome! 
